@@ -1,8 +1,27 @@
-import type { NextPage, GetStaticProps } from "next";
+import Acalculator from "@components/common/acalculator";
+import Footer from "@components/common/footer";
+import Table from "@components/common/table";
+import {
+  discElectronicShift,
+  discMechanicalShift,
+  headerData,
+  IBikePartsData,
+  rimElectronicShiftData,
+  rimMechanicalShiftData,
+} from "data/data";
+import type { GetStaticProps } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 
-const Home: NextPage = () => {
+interface PropsType {
+  headData: string[];
+  rmsData: IBikePartsData[];
+  resData: IBikePartsData[];
+  dmsData: IBikePartsData[];
+  desData: IBikePartsData[];
+}
+
+const Home = ({ headData, rmsData, resData, dmsData, desData }: PropsType) => {
   return (
     <Wrapper>
       <Head>
@@ -11,30 +30,66 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ContentSection>안녕11</ContentSection>
+      <ContentSection>
+        <Acalculator />
+
+        <Table
+          headData={headData}
+          partsType="Mechanical Shift(Rim)"
+          partsData={rmsData}
+        />
+
+        <Table
+          headData={headData}
+          partsType="Electronic Shift(Rim)"
+          partsData={resData}
+        />
+
+        <Table
+          headData={headData}
+          partsType="Mechanical Shift(Disc)"
+          partsData={dmsData}
+        />
+
+        <Table
+          headData={headData}
+          partsType="Electronic Shift(Disc)"
+          partsData={desData}
+        />
+      </ContentSection>
+
+      <Footer />
     </Wrapper>
   );
 };
 
+export default Home;
+
 export const getStaticProps: GetStaticProps = () => {
-  const number = "ww";
+  const headData = headerData;
+  const rmsData = rimMechanicalShiftData;
+  const resData = rimElectronicShiftData;
+  const dmsData = discMechanicalShift;
+  const desData = discElectronicShift;
 
   return {
-    props: {},
+    props: {
+      headData,
+      rmsData,
+      resData,
+      dmsData,
+      desData,
+    },
   };
 };
-
-export default Home;
 
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
+  background-color: #fff;
 `;
 
 const ContentSection = styled.section`
-  width: 100%;
-  height: 100vh;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background-color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
 `;

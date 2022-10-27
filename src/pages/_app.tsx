@@ -1,11 +1,14 @@
-import Layout from "@components/common/Layout";
+import Layout from "@components/common/layout";
 import "@styles/globals.css";
 import type { AppProps } from "next/app";
+import { RecoilRoot } from "recoil";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-      <Component {...pageProps} />
+      <RecoilRoot>
+        <Component {...pageProps} />
+      </RecoilRoot>
     </Layout>
   );
 }
