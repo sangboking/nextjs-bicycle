@@ -14,10 +14,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "@components/*": ["components/*"],
-      "@styles/*": ["../styles/*"]
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["/styles/*"],
+      "@data/*": ["src/data/*"],
+      "@store/*": ["src/store/*"],
+      "@utils/*": ["src/utils/*"]
     }
   },
   "include": [

@@ -1,25 +1,26 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "./button";
-import { useRecoilState, useRecoilValue, useResetRecoilState } from "recoil";
-import { partsWeightAtom } from "store/atom";
+import Button from "@components/common/button";
+import { useRecoilState, useResetRecoilState } from "recoil";
+import { partsTotalWeightAtom } from "@store/atom";
 
 export default function Acalculator() {
-  const [partsWeight, setPartsWeight] = useRecoilState(partsWeightAtom);
-  const resetPartsWeight = useResetRecoilState(partsWeightAtom);
+  const [partsTotalWeight, setPartsTotalWeight] =
+    useRecoilState(partsTotalWeightAtom);
+  const resetPartsWeight = useResetRecoilState(partsTotalWeightAtom);
 
   const handleWeightResetClick = () => {
     resetPartsWeight();
   };
 
   const handleWeightAddClick = () => {
-    setPartsWeight(partsWeight + 1);
+    setPartsTotalWeight(partsTotalWeight + 1);
   };
 
   return (
     <UlWrapper>
       <Li>
-        <PartsWeightBox>{partsWeight}</PartsWeightBox>
+        <PartsWeightBox>{partsTotalWeight}</PartsWeightBox>
       </Li>
       <Li>
         <Button content="계산" clickFunc={handleWeightAddClick} />

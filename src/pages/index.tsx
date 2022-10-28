@@ -8,7 +8,7 @@ import {
   IBikePartsData,
   rimElectronicShiftData,
   rimMechanicalShiftData,
-} from "data/data";
+} from "@data/data";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
 import styled from "styled-components";
