@@ -1,4 +1,4 @@
-import Acalculator from "@components/common/acalculator";
+import Calculator from "@components/common/calculator";
 import Footer from "@components/common/footer";
 import Table from "@components/common/table";
 import {
@@ -11,6 +11,7 @@ import {
 } from "@data/data";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 interface PropsType {
@@ -22,6 +23,14 @@ interface PropsType {
 }
 
 const Home = ({ headData, rmsData, resData, dmsData, desData }: PropsType) => {
+  const [tabState, setTabState] = useState(1);
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (e.target.value === "msr") setTabState(1);
+    if (e.target.value === "esr") setTabState(2);
+    if (e.target.value === "msd") setTabState(3);
+    if (e.target.value === "esd") setTabState(4);
+  };
   return (
     <Wrapper>
       <Head>
@@ -31,31 +40,46 @@ const Home = ({ headData, rmsData, resData, dmsData, desData }: PropsType) => {
       </Head>
 
       <ContentSection>
-        <Acalculator />
+        <Calculator />
 
-        <Table
-          headData={headData}
-          partsType="Mechanical Shift(Rim)"
-          partsData={rmsData}
-        />
+        <select onChange={handleSelectChange}>
+          <option value="msr">Mechanical Shift(Rim)</option>
+          <option value="esr">Electronic Shift(Rim)</option>
+          <option value="msd">Mechanical Shift(Disc)</option>
+          <option value="esd">Electronic Shift(Disc)</option>
+        </select>
 
-        <Table
-          headData={headData}
-          partsType="Electronic Shift(Rim)"
-          partsData={resData}
-        />
+        {tabState === 1 && (
+          <Table
+            headData={headData}
+            partsType="Mechanical Shift(Rim)"
+            partsData={rmsData}
+          />
+        )}
 
-        <Table
-          headData={headData}
-          partsType="Mechanical Shift(Disc)"
-          partsData={dmsData}
-        />
+        {tabState === 2 && (
+          <Table
+            headData={headData}
+            partsType="Electronic Shift(Rim)"
+            partsData={resData}
+          />
+        )}
 
-        <Table
-          headData={headData}
-          partsType="Electronic Shift(Disc)"
-          partsData={desData}
-        />
+        {tabState === 3 && (
+          <Table
+            headData={headData}
+            partsType="Mechanical Shift(Disc)"
+            partsData={dmsData}
+          />
+        )}
+
+        {tabState === 4 && (
+          <Table
+            headData={headData}
+            partsType="Electronic Shift(Disc)"
+            partsData={desData}
+          />
+        )}
       </ContentSection>
 
       <Footer />

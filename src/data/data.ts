@@ -20,6 +20,7 @@ export interface IBikePartsData {
   chain: number;
   brakes: number;
   total: number;
+  id: number;
 }
 
 export const rimMechanicalShiftData: IBikePartsData[] = [
@@ -33,6 +34,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 247,
     brakes: 326,
     total: 1973,
+    id: 1,
   },
   {
     name: "Ultegra R8000",
@@ -44,6 +46,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 257,
     brakes: 360,
     total: 2272,
+    id: 2,
   },
   {
     name: "105 R7000",
@@ -55,6 +58,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 257,
     brakes: 379,
     total: 2453,
+    id: 3,
   },
   {
     name: "Dura-Ace 9000",
@@ -66,6 +70,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 249,
     brakes: 294,
     total: 1960,
+    id: 4,
   },
   {
     name: "Ultegra 6800",
@@ -77,6 +82,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 260,
     brakes: 340,
     total: 2243,
+    id: 5,
   },
   {
     name: "105 5800",
@@ -88,6 +94,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 260,
     brakes: 340,
     total: 2467,
+    id: 6,
   },
   {
     name: "Red 22",
@@ -99,6 +106,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 246,
     brakes: 262,
     total: 1778,
+    id: 7,
   },
   {
     name: "Force 22",
@@ -110,6 +118,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 220,
     brakes: 326,
     total: 2054,
+    id: 8,
   },
   {
     name: "Super Record 12",
@@ -121,6 +130,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 220,
     brakes: 311,
     total: 2014,
+    id: 9,
   },
   {
     name: "Recored 12",
@@ -132,6 +142,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 220,
     brakes: 326,
     total: 2160,
+    id: 10,
   },
   {
     name: "Chours 12",
@@ -143,6 +154,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 247,
     brakes: 318,
     total: 2290,
+    id: 11,
   },
   {
     name: "Super Record 11",
@@ -154,6 +166,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 239,
     brakes: 297,
     total: 1895,
+    id: 12,
   },
   {
     name: "Record 11",
@@ -165,6 +178,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 239,
     brakes: 309,
     total: 1993,
+    id: 13,
   },
   {
     name: "Chours 11",
@@ -176,6 +190,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 250,
     brakes: 302,
     total: 2074,
+    id: 14,
   },
   {
     name: "Centaur 11",
@@ -187,6 +202,7 @@ export const rimMechanicalShiftData: IBikePartsData[] = [
     chain: 256,
     brakes: 325,
     total: 2453,
+    id: 15,
   },
 ];
 
@@ -201,6 +217,7 @@ export const rimElectronicShiftData: IBikePartsData[] = [
     chain: 247,
     brakes: 326,
     total: 1911,
+    id: 16,
   },
   {
     name: "Ultegra Di2 R8050",
@@ -212,6 +229,7 @@ export const rimElectronicShiftData: IBikePartsData[] = [
     chain: 257,
     brakes: 360,
     total: 2209,
+    id: 17,
   },
   {
     name: "Dura-Ace Di2 9070",
@@ -223,6 +241,7 @@ export const rimElectronicShiftData: IBikePartsData[] = [
     chain: 249,
     brakes: 294,
     total: 1939,
+    id: 18,
   },
   {
     name: "Ultegra Di2 6870",
@@ -234,6 +253,7 @@ export const rimElectronicShiftData: IBikePartsData[] = [
     chain: 260,
     brakes: 340,
     total: 2298,
+    id: 19,
   },
   {
     name: "Red eTap AXS",
@@ -245,6 +265,7 @@ export const rimElectronicShiftData: IBikePartsData[] = [
     chain: 255,
     brakes: 267,
     total: 2043,
+    id: 20,
   },
   {
     name: "Force eTap AXS",
@@ -256,6 +277,7 @@ export const rimElectronicShiftData: IBikePartsData[] = [
     chain: 269,
     brakes: 303,
     total: 2387,
+    id: 21,
   },
   {
     name: "Red eTap",
@@ -267,6 +289,7 @@ export const rimElectronicShiftData: IBikePartsData[] = [
     chain: 246,
     brakes: 262,
     total: 1970,
+    id: 22,
   },
   {
     name: "Super Record EPS 12",
@@ -278,6 +301,7 @@ export const rimElectronicShiftData: IBikePartsData[] = [
     chain: 220,
     brakes: 230,
     total: 1980,
+    id: 23,
   },
   {
     name: "Super Record EPS 11",
@@ -289,6 +313,7 @@ export const rimElectronicShiftData: IBikePartsData[] = [
     chain: 238,
     brakes: 311,
     total: 1927,
+    id: 24,
   },
   {
     name: "Record EPS 11",
@@ -300,6 +325,7 @@ export const rimElectronicShiftData: IBikePartsData[] = [
     chain: 238,
     brakes: 326,
     total: 2028,
+    id: 25,
   },
 ];
 
@@ -314,6 +340,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     chain: 247,
     brakes: 256,
     total: 2076,
+    id: 26,
   },
   {
     name: "Ultegra R8020",
@@ -325,6 +352,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     chain: 257,
     brakes: 286,
     total: 2314,
+    id: 27,
   },
   {
     name: "105 R7020",
@@ -336,6 +364,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     chain: 257,
     brakes: 294,
     total: 2478,
+    id: 28,
   },
   {
     name: "GRX RX810 1x11",
@@ -347,6 +376,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     chain: 0,
     brakes: 280,
     total: 0,
+    id: 29,
   },
   {
     name: "GRX RX810 2x11",
@@ -358,6 +388,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     chain: 0,
     brakes: 280,
     total: 0,
+    id: 30,
   },
   {
     name: "Red 22 HRD",
@@ -369,6 +400,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     chain: 246,
     brakes: 0,
     total: 1984,
+    id: 31,
   },
   {
     name: "Force 22 HRD",
@@ -380,6 +412,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     chain: 256,
     brakes: 0,
     total: 2232,
+    id: 32,
   },
   {
     name: "Ekar 1x13",
@@ -391,6 +424,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     chain: 242,
     brakes: 205,
     total: 2097,
+    id: 33,
   },
   {
     name: "Super Record Disc 12",
@@ -402,6 +436,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     chain: 220,
     brakes: 230,
     total: 2056,
+    id: 34,
   },
   {
     name: "Record Disc 12",
@@ -413,6 +448,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     chain: 220,
     brakes: 230,
     total: 2184,
+    id: 35,
   },
   {
     name: "Chorus Disc 12",
@@ -424,6 +460,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     chain: 247,
     brakes: 255,
     total: 2366,
+    id: 36,
   },
   {
     name: "Rival 1 HRD",
@@ -435,6 +472,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     chain: 270,
     brakes: 0,
     total: 2518,
+    id: 37,
   },
   {
     name: "Force 1 HRD",
@@ -446,6 +484,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     chain: 256,
     brakes: 0,
     total: 2258,
+    id: 38,
   },
 ];
 
@@ -460,6 +499,7 @@ export const discElectronicShift: IBikePartsData[] = [
     chain: 248,
     brakes: 230,
     total: 2076,
+    id: 39,
   },
   {
     name: "Ultegra R8100 12-speed",
@@ -471,6 +511,7 @@ export const discElectronicShift: IBikePartsData[] = [
     chain: 268,
     brakes: 282,
     total: 2338,
+    id: 40,
   },
   {
     name: "Dura-Ace Di2 R9170",
@@ -482,6 +523,7 @@ export const discElectronicShift: IBikePartsData[] = [
     chain: 247,
     brakes: 256,
     total: 1931,
+    id: 41,
   },
   {
     name: "Ultegra Di2 R8070",
@@ -493,6 +535,7 @@ export const discElectronicShift: IBikePartsData[] = [
     chain: 257,
     brakes: 286,
     total: 2200,
+    id: 42,
   },
   {
     name: "GRX Di2 RX815 1x11",
@@ -504,6 +547,7 @@ export const discElectronicShift: IBikePartsData[] = [
     chain: 0,
     brakes: 280,
     total: 0,
+    id: 43,
   },
   {
     name: "GRX Di2 RX815 2x11",
@@ -515,6 +559,7 @@ export const discElectronicShift: IBikePartsData[] = [
     chain: 0,
     brakes: 280,
     total: 0,
+    id: 44,
   },
   {
     name: "Red eTap AXS HRD",
@@ -526,6 +571,7 @@ export const discElectronicShift: IBikePartsData[] = [
     chain: 255,
     brakes: 282,
     total: 2242,
+    id: 45,
   },
   {
     name: "Force eTap AXS HRD",
@@ -537,6 +583,7 @@ export const discElectronicShift: IBikePartsData[] = [
     chain: 269,
     brakes: 346,
     total: 2603,
+    id: 46,
   },
   {
     name: "Rival eTAP AXS HRD",
@@ -548,6 +595,7 @@ export const discElectronicShift: IBikePartsData[] = [
     chain: 266,
     brakes: 0,
     total: 2785,
+    id: 47,
   },
   {
     name: "Red eTap HRD",
@@ -559,6 +607,7 @@ export const discElectronicShift: IBikePartsData[] = [
     chain: 246,
     brakes: 0,
     total: 2236,
+    id: 48,
   },
   {
     name: "Super Record EPS Disc 12",
@@ -570,5 +619,6 @@ export const discElectronicShift: IBikePartsData[] = [
     chain: 220,
     brakes: 236,
     total: 2087,
+    id: 49,
   },
 ];

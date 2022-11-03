@@ -1,3 +1,4 @@
+import React from "react";
 import { IBikePartsData } from "@data/data";
 import {
   brakesWeightAtom,
@@ -7,9 +8,7 @@ import {
   frontdWeightAtom,
   reardWeightAtom,
   shifterWeightAtom,
-  totalWeightAtom,
 } from "@store/atom";
-import React from "react";
 import { useRecoilState } from "recoil";
 import { getKeyByValue } from "@utils/funcs";
 import styled from "styled-components";
@@ -28,18 +27,20 @@ export default function Table({ headData, partsType, partsData }: PropsType) {
   const [cassWeight, setCassWeight] = useRecoilState(cassWeightAtom);
   const [chainWeight, setChainWeight] = useRecoilState(chainWeightAtom);
   const [brakesWeight, setBrakesWeight] = useRecoilState(brakesWeightAtom);
-  const [totalWeight, setTotalWeight] = useRecoilState(totalWeightAtom);
 
   const copyHeadData = [...headData];
   copyHeadData[0] = partsType;
 
-  const handlePartsClick = (weight: number, data: any, i: number) => {
+  const handlePartsClick = (weight: number, data: any, id: number) => {
     const key = getKeyByValue(data, weight);
 
-    if (key === "shifters") setShiterWeight(i);
-    if (key === "rearD") setReardWeight(weight);
-    if (key === "frontD") setFrontdWeight(weight);
-    if (key === "cranks") setCranksWeight(weight);
+    if (key === "shifters") setShiterWeight({ id, weight });
+    if (key === "rearD") setReardWeight({ id, weight });
+    if (key === "frontD") setFrontdWeight({ id, weight });
+    if (key === "cranks") setCranksWeight({ id, weight });
+    if (key === "cass") setCassWeight({ id, weight });
+    if (key === "chain") setChainWeight({ id, weight });
+    if (key === "brakes") setBrakesWeight({ id, weight });
   };
 
   return (
@@ -51,7 +52,7 @@ export default function Table({ headData, partsType, partsData }: PropsType) {
       </TableHead>
 
       <TableContent>
-        {partsData.map((data, i) => {
+        {partsData.map((data) => {
           return (
             <ContentColumn key={data.name}>
               <ContentColumnBox style={{ backgroundColor: "#fff" }}>
@@ -59,47 +60,70 @@ export default function Table({ headData, partsType, partsData }: PropsType) {
               </ContentColumnBox>
               <ContentColumnBox
                 onClick={() => {
-                  handlePartsClick(data.shifters, data, i);
+                  handlePartsClick(data.shifters, data, data.id);
                 }}
-                partsWeight={data.shifters}
-                weight={shifterWeight}
-                index={i}
+                weight={shifterWeight.id}
+                id={data.id}
               >
                 {data.shifters}
               </ContentColumnBox>
 
               <ContentColumnBox
                 onClick={() => {
-                  handlePartsClick(data.rearD, data, i);
+                  handlePartsClick(data.rearD, data, data.id);
                 }}
-                partsWeight={data.rearD}
-                weight={reardWeight}
+                weight={reardWeight.id}
+                id={data.id}
               >
                 {data.rearD}
               </ContentColumnBox>
 
               <ContentColumnBox
                 onClick={() => {
-                  handlePartsClick(data.frontD, data, i);
+                  handlePartsClick(data.frontD, data, data.id);
                 }}
-                partsWeight={data.frontD}
-                weight={frontdWeight}
+                weight={frontdWeight.id}
+                id={data.id}
               >
                 {data.frontD}
               </ContentColumnBox>
 
               <ContentColumnBox
                 onClick={() => {
-                  handlePartsClick(data.cranks, data, i);
+                  handlePartsClick(data.cranks, data, data.id);
                 }}
-                partsWeight={data.cranks}
-                weight={cranksWeight}
+                weight={cranksWeight.id}
+                id={data.id}
               >
                 {data.cranks}
               </ContentColumnBox>
-              <ContentColumnBox>{data.cass}</ContentColumnBox>
-              <ContentColumnBox>{data.chain}</ContentColumnBox>
-              <ContentColumnBox>{data.brakes}</ContentColumnBox>
+              <ContentColumnBox
+                onClick={() => {
+                  handlePartsClick(data.cass, data, data.id);
+                }}
+                weight={cassWeight.id}
+                id={data.id}
+              >
+                {data.cass}
+              </ContentColumnBox>
+              <ContentColumnBox
+                onClick={() => {
+                  handlePartsClick(data.chain, data, data.id);
+                }}
+                weight={chainWeight.id}
+                id={data.id}
+              >
+                {data.chain}
+              </ContentColumnBox>
+              <ContentColumnBox
+                onClick={() => {
+                  handlePartsClick(data.brakes, data, data.id);
+                }}
+                weight={brakesWeight.id}
+                id={data.id}
+              >
+                {data.brakes}
+              </ContentColumnBox>
               <ContentColumnBox>{data.total}</ContentColumnBox>
             </ContentColumn>
           );
@@ -145,9 +169,8 @@ const ContentColumn = styled.div`
 `;
 
 const ContentColumnBox = styled.div<{
-  partsWeight?: number;
-  weight?: number | null;
-  index?: number;
+  weight?: number;
+  id?: any;
 }>`
   display: flex;
   align-items: center;
@@ -158,7 +181,10 @@ const ContentColumnBox = styled.div<{
   :nth-child(n) {
     font-size: 0.8rem;
     background-color: ${(props) =>
-      props.index === props.weight ? "blue" : "#fff"};
+      props.id === props.weight ? "blue" : "#fff"};
+  }
+  :last-child {
+    background-color: #fff;
   }
 
   cursor: pointer;
