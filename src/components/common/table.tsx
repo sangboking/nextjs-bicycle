@@ -31,7 +31,11 @@ export default function Table({ headData, partsType, partsData }: PropsType) {
   const copyHeadData = [...headData];
   copyHeadData[0] = partsType;
 
-  const handlePartsClick = (weight: number, data: any, id: number) => {
+  const handlePartsClick = (
+    weight: number | null,
+    data: IBikePartsData,
+    id: number
+  ) => {
     const key = getKeyByValue(data, weight);
 
     if (key === "shifters") setShiterWeight({ id, weight });
@@ -58,6 +62,7 @@ export default function Table({ headData, partsType, partsData }: PropsType) {
               <ContentColumnBox style={{ backgroundColor: "#fff" }}>
                 {data.name}
               </ContentColumnBox>
+
               <ContentColumnBox
                 onClick={() => {
                   handlePartsClick(data.shifters, data, data.id);
@@ -181,7 +186,7 @@ const ContentColumnBox = styled.div<{
   :nth-child(n) {
     font-size: 0.8rem;
     background-color: ${(props) =>
-      props.id === props.weight ? "blue" : "#fff"};
+      props.id === props.weight ? "skyblue" : "#fff"};
   }
   :last-child {
     background-color: #fff;

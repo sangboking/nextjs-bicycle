@@ -1,8 +1,8 @@
-import { atom, selector } from "recoil";
+import { atom } from "recoil";
 
 interface IParts {
   id: number;
-  weight: number;
+  weight: any;
 }
 
 export const shifterWeightAtom = atom<IParts>({

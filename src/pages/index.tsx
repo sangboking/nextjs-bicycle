@@ -45,7 +45,10 @@ const Home = ({ headData, rmsData, resData, dmsData, desData }: PropsType) => {
       <ContentSection>
         <Calculator />
 
-        <select onChange={handleSelectChange}>
+        <select
+          onChange={handleSelectChange}
+          style={{ padding: "5px", borderRadius: "13px" }}
+        >
           <option value="msr">Mechanical Shift(Rim)</option>
           <option value="esr">Electronic Shift(Rim)</option>
           <option value="msd">Mechanical Shift(Disc)</option>

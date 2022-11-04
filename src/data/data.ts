@@ -12,14 +12,14 @@ export const headerData: string[] = [
 
 export interface IBikePartsData {
   name: string;
-  shifters: number;
-  rearD: number;
-  frontD: number;
-  cranks: number;
-  cass: number;
-  chain: number;
-  brakes: number;
-  total: number;
+  shifters: number | null;
+  rearD: number | null;
+  frontD: number | null;
+  cranks: number | null;
+  cass: number | null;
+  chain: number | null;
+  brakes: number | null;
+  total: number | null;
   id: number;
 }
 
@@ -275,7 +275,7 @@ export const rimElectronicShiftData: IBikePartsData[] = [
     cranks: 744,
     cass: 266,
     chain: 269,
-    brakes: 303,
+    brakes: 302,
     total: 2387,
     id: 21,
   },
@@ -370,12 +370,12 @@ export const discMechanicalShift: IBikePartsData[] = [
     name: "GRX RX810 1x11",
     shifters: 572,
     rearD: 274,
-    frontD: 0,
+    frontD: null,
     cranks: 655,
-    cass: 0,
-    chain: 0,
+    cass: null,
+    chain: null,
     brakes: 280,
-    total: 0,
+    total: null,
     id: 29,
   },
   {
@@ -384,10 +384,10 @@ export const discMechanicalShift: IBikePartsData[] = [
     rearD: 274,
     frontD: 94,
     cranks: 722,
-    cass: 0,
-    chain: 0,
+    cass: null,
+    chain: null,
     brakes: 280,
-    total: 0,
+    total: null,
     id: 30,
   },
   {
@@ -398,7 +398,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     cranks: 609,
     cass: 167,
     chain: 246,
-    brakes: 0,
+    brakes: null,
     total: 1984,
     id: 31,
   },
@@ -410,7 +410,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     cranks: 697,
     cass: 257,
     chain: 256,
-    brakes: 0,
+    brakes: null,
     total: 2232,
     id: 32,
   },
@@ -418,7 +418,7 @@ export const discMechanicalShift: IBikePartsData[] = [
     name: "Ekar 1x13",
     shifters: 420,
     rearD: 275,
-    frontD: 0,
+    frontD: null,
     cranks: 615,
     cass: 340,
     chain: 242,
@@ -466,11 +466,11 @@ export const discMechanicalShift: IBikePartsData[] = [
     name: "Rival 1 HRD",
     shifters: 749,
     rearD: 270,
-    frontD: 0,
+    frontD: null,
     cranks: 806,
     cass: 423,
     chain: 270,
-    brakes: 0,
+    brakes: null,
     total: 2518,
     id: 37,
   },
@@ -478,11 +478,11 @@ export const discMechanicalShift: IBikePartsData[] = [
     name: "Force 1 HRD",
     shifters: 770,
     rearD: 270,
-    frontD: 0,
+    frontD: null,
     cranks: 596,
     cass: 366,
     chain: 256,
-    brakes: 0,
+    brakes: null,
     total: 2258,
     id: 38,
   },
@@ -541,12 +541,12 @@ export const discElectronicShift: IBikePartsData[] = [
     name: "GRX Di2 RX815 1x11",
     shifters: 565,
     rearD: 288,
-    frontD: 0,
+    frontD: null,
     cranks: 655,
-    cass: 0,
-    chain: 0,
+    cass: null,
+    chain: null,
     brakes: 280,
-    total: 0,
+    total: null,
     id: 43,
   },
   {
@@ -555,10 +555,10 @@ export const discElectronicShift: IBikePartsData[] = [
     rearD: 288,
     frontD: 131,
     cranks: 722,
-    cass: 0,
-    chain: 0,
+    cass: null,
+    chain: null,
     brakes: 280,
-    total: 0,
+    total: null,
     id: 44,
   },
   {
@@ -593,7 +593,7 @@ export const discElectronicShift: IBikePartsData[] = [
     cranks: 844,
     cass: 282,
     chain: 266,
-    brakes: 0,
+    brakes: null,
     total: 2785,
     id: 47,
   },
@@ -605,12 +605,12 @@ export const discElectronicShift: IBikePartsData[] = [
     cranks: 609,
     cass: 167,
     chain: 246,
-    brakes: 0,
+    brakes: null,
     total: 2236,
     id: 48,
   },
   {
-    name: "Super Record EPS Disc 12",
+    name: "Super Record EPS Disc 12",
     shifters: 381,
     rearD: 234,
     frontD: 132,

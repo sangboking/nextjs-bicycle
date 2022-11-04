@@ -13,10 +13,11 @@ export default function Button({ content, clickFunc }: buttonProps) {
 const Wrapper = styled.div`
   width: 100px;
   height: 40px;
-  background-color: pink;
+  background-color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  border: 2px solid #eaeaea;
   cursor: pointer;
 `;

@@ -96,9 +96,10 @@ const Li = styled.li`
 const PartsWeightBox = styled.div`
   width: 130px;
   height: 40px;
-  background-color: pink;
+  background-color: #fff;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid #eaeaea;
 `;
