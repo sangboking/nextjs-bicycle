@@ -1,29 +1,83 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Button from "@components/common/button";
+import { useRecoilState, useRecoilValue, useResetRecoilState } from "recoil";
 import {
-  useRecoilState,
-  useRecoilValue,
-  useResetRecoilState,
-  useSetRecoilState,
-} from "recoil";
-import { partsTotalSelector } from "@store/atom";
+  brakesWeightAtom,
+  cassWeightAtom,
+  chainWeightAtom,
+  cranksWeightAtom,
+  frontdWeightAtom,
+  partsTotalWeightAtom,
+  reardWeightAtom,
+  shifterWeightAtom,
+  tabStateAtom,
+} from "@store/atom";
 
 export default function Calculator() {
-  const partsTotal = useRecoilValue(partsTotalSelector);
+  const [partsTotalWeight, setPartsTotalWeight] =
+    useRecoilState(partsTotalWeightAtom);
+  const resetPartsTotalWeight = useResetRecoilState(partsTotalWeightAtom);
+  const resetShifterWeight = useResetRecoilState(shifterWeightAtom);
+  const resetReardWeight = useResetRecoilState(reardWeightAtom);
+  const resetFrontdWeight = useResetRecoilState(frontdWeightAtom);
+  const resetCranksWeight = useResetRecoilState(cranksWeightAtom);
+  const resetCassWeight = useResetRecoilState(cassWeightAtom);
+  const resetChainWeight = useResetRecoilState(chainWeightAtom);
+  const resetBrakesWeight = useResetRecoilState(brakesWeightAtom);
+  const shifterWeight = useRecoilValue(shifterWeightAtom);
+  const rearDWeight = useRecoilValue(reardWeightAtom);
+  const frontDWeight = useRecoilValue(frontdWeightAtom);
+  const cranksWeight = useRecoilValue(cranksWeightAtom);
+  const cassWeight = useRecoilValue(cassWeightAtom);
+  const chainWeight = useRecoilValue(chainWeightAtom);
+  const brakesWeight = useRecoilValue(brakesWeightAtom);
+  const tabState = useRecoilValue(tabStateAtom);
 
-  const handleWeightResetClick = () => {};
+  const handleWeightResetClick = () => {
+    resetPartsTotalWeight();
+    resetShifterWeight();
+    resetReardWeight();
+    resetFrontdWeight();
+    resetCranksWeight();
+    resetCassWeight();
+    resetChainWeight();
+    resetBrakesWeight();
+  };
+
+  const handleWeightAddClick = () => {
+    setPartsTotalWeight(
+      shifterWeight.weight +
+        rearDWeight.weight +
+        frontDWeight.weight +
+        cranksWeight.weight +
+        cassWeight.weight +
+        chainWeight.weight +
+        brakesWeight.weight
+    );
+  };
+
+  useEffect(() => {
+    resetPartsTotalWeight();
+    resetShifterWeight();
+    resetReardWeight();
+    resetFrontdWeight();
+    resetCranksWeight();
+    resetCassWeight();
+    resetChainWeight();
+    resetBrakesWeight();
+  }, [tabState]);
 
   return (
     <UlWrapper>
       <Li>
-        <PartsWeightBox>{partsTotal}</PartsWeightBox>
+        <PartsWeightBox>{partsTotalWeight}</PartsWeightBox>
       </Li>
       <Li>
-        <Button content="계산" />
+        <Button content="계산" clickFunc={handleWeightAddClick} />
       </Li>
       <Li>
-        <Button content="초기화" />
+        <Button content="초기화" clickFunc={handleWeightResetClick} />
       </Li>
     </UlWrapper>
   );

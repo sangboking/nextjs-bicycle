@@ -40,25 +40,12 @@ export const brakesWeightAtom = atom<IParts>({
   default: { id: 0, weight: 0 },
 });
 
-export const partsTotalSelector = selector({
-  key: "partsTotalSelector",
-  get: ({ get }) => {
-    const shifter = get(shifterWeightAtom);
-    const rearD = get(reardWeightAtom);
-    const frontD = get(frontdWeightAtom);
-    const cranks = get(cranksWeightAtom);
-    const cass = get(cassWeightAtom);
-    const chain = get(chainWeightAtom);
-    const brakes = get(brakesWeightAtom);
+export const partsTotalWeightAtom = atom<number>({
+  key: "partsTotalWeight",
+  default: 0,
+});
 
-    const total =
-      shifter.weight +
-      rearD.weight +
-      frontD.weight +
-      cranks.weight +
-      cass.weight +
-      chain.weight +
-      brakes.weight;
-    return total;
-  },
+export const tabStateAtom = atom<number>({
+  key: "tabState",
+  default: 1,
 });

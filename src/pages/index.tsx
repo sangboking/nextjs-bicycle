@@ -9,9 +9,11 @@ import {
   rimElectronicShiftData,
   rimMechanicalShiftData,
 } from "@data/data";
+import { tabStateAtom } from "@store/atom";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
-import React, { useState } from "react";
+import React from "react";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
 
 interface PropsType {
@@ -23,7 +25,7 @@ interface PropsType {
 }
 
 const Home = ({ headData, rmsData, resData, dmsData, desData }: PropsType) => {
-  const [tabState, setTabState] = useState(1);
+  const [tabState, setTabState] = useRecoilState(tabStateAtom);
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === "msr") setTabState(1);
@@ -31,6 +33,7 @@ const Home = ({ headData, rmsData, resData, dmsData, desData }: PropsType) => {
     if (e.target.value === "msd") setTabState(3);
     if (e.target.value === "esd") setTabState(4);
   };
+
   return (
     <Wrapper>
       <Head>
@@ -109,7 +112,6 @@ export const getStaticProps: GetStaticProps = () => {
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100vh;
   background-color: #fff;
 `;
 
