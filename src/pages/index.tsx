@@ -87,8 +87,6 @@ const Home = ({ headData, rmsData, resData, dmsData, desData }: PropsType) => {
           />
         )}
       </ContentSection>
-
-      <Footer />
     </Wrapper>
   );
 };

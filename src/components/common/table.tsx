@@ -187,6 +187,7 @@ const ContentColumnBox = styled.div<{
     font-size: 0.8rem;
     background-color: ${(props) =>
       props.id === props.weight ? "skyblue" : "#fff"};
+    transition: 0.3s;
   }
   :last-child {
     background-color: #fff;

@@ -5,7 +5,7 @@ export default function Footer() {
   return <Wrapper>footer</Wrapper>;
 }
 
-const Wrapper = styled.section`
+const Wrapper = styled.footer`
   width: 100%;
   height: 5rem;
   position: fixed;
